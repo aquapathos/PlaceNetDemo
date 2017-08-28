@@ -166,7 +166,7 @@ n02088632 bluetick 164
 n02089078 black-and-tan coonhound 165
 n02089867 Walker hound, Walker foxhound 166
 n02089973 English foxhound 167
-n02090379 redbone 168
+n02090379 ç 168
 n02090622 borzoi, Russian wolfhound 169
 n02090721 Irish wolfhound 170
 n02091032 Italian greyhound 171
