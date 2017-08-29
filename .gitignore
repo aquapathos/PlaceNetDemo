@@ -45,3 +45,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+*.pkl
+
+pysrc/modeldata/vgg16_hybrid1365.pkl.zip
