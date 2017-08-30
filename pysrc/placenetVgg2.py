@@ -19,7 +19,7 @@ def blob2img(blob, mean=mean):
 
 # 確率リストとしての出力からトップ５を出力するメソッド2
 # 日本語化済みのカテゴリリストを用いる
-f = open("pysrc/modeldata/jcategories.txt",'r')
+f = open("pysrc/modeldata/jcategories.txt",'r',encoding="utf-8")
 jcategories={}
 for n in range(1365):
     jcategories[n]=f.readline()[:-1]
@@ -32,8 +32,14 @@ def showtop2(prob, ranklimit=5): # prob は最終層から出力される確率�
         print("{} {} ({:7.5f})".format(rank+1,jcategories[n], top5probs[rank]))
 
 def url2img(url):
-    print(url)
-    f = io.BytesIO(urllib.request.urlopen(url).read())
+    # print(url)
+    if url[:16] == "http://localhost":
+        pic = url.rsplit('/',1)[1]
+        f = open("pics/"+pic,'rb')
+    elif url[:4] != "http":
+        f = open(url,'rb')
+    else:
+        f = io.BytesIO(urllib.request.urlopen(url).read())
     img = PIL.Image.open(f)
     w,h = img.width, img.height
     if w > h:
